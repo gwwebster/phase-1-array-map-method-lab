@@ -11,6 +11,23 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+function titleCased() {
+  let titleCasedArray= tutorials.map(title => {
+    let arrayOfSeparatedTitle = title.split(' ')
+    let capitalizedTitle = arrayOfSeparatedTitle.map(word => {
+      return word[0].toUpperCase() + word.slice(1)
+    })
+    return capitalizedTitle.join(' ')
+  })
+  return titleCasedArray
 }
+
+// Below is a version of above function that accepts a string as an argument instead of an array of strings
+//const str = "this string is a test"
+//function foo (string) {
+//   let arrayOfSeparatedWords = string.split(' ')
+//   let capitalizedArray = arrayOfSeparatedWords.map(word => {
+//     return word[0].toUpperCase() + word.slice(1)
+//   })
+//   return capitalizedArray.join(' ')
+// }
